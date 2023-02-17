@@ -1,10 +1,8 @@
-@extends('Layout')
-
-@section('content')
+<x-layout>
     <article>
         <h1> {{ $post->title }} </h1>
-        <span>Published: {{ $post->date }} </span>
+        <h3>Published: {{ $post->published_at }} </h3>
         {!! $post->body !!}
     </article>
-    <a href="/" class="go-home">Go Home</a>
-@endsection
+    <x-link href="/"> Go Home </x-link>
+</x-layout>

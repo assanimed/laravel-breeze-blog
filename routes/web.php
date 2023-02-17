@@ -18,12 +18,12 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::get('/', function () {
     return view('posts', [
-        'posts' => Post::findAll(),
+        'posts' => Post::all(),
     ]);
 });
 
-Route::get('/post/{post}', function ($slug) {
+Route::get('/post/{post}', function ($id) {
     return view('post', [
-        'post' => Post::find($slug),
+        'post' => Post::findOrFail($id),
     ]);
-})->whereAlphaNumeric('post');
+});
