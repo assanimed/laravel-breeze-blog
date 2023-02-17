@@ -1,0 +1,56 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: rgb(239, 245, 245);
+    color: #222222;
+    font-family: sans-serif;
+}
+
+section {
+    padding: 50px 0;
+    max-width: 500px;
+    margin: auto;
+}
+
+article+article {
+    margin-top: 3.5rem;
+    border-top: 2px solid #9fe9d3ab;
+    padding-top: 2rem;
+}
+
+article a {
+    text-decoration: none;
+    color: rgb(50, 110, 223);
+}
+
+article a:hover {
+    color: rgb(25, 69, 151);
+}
+
+article h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+article p {
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+.go-home {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.4rem;
+    border: 2px solid rgb(36, 119, 214);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.publish {
+    font-size: 1.2rem;
+    display: block;
+    margin: 5px 0;
+    color: rgb(47, 47, 138);
+}

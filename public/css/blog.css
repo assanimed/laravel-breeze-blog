@@ -1,0 +1,12 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+main {
+    max-width: 500px;
+    margin: auto;
+}
