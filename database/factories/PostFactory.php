@@ -26,8 +26,10 @@ class PostFactory extends Factory
             'title' => fake()->sentence,
             'slug' => fake()->slug,
             'published_at' => now(),
-            'excerpt' => fake()->sentence,
-            'body' => fake()->paragraph,
+            'excerpt' =>
+                '<p>' . implode('</p><p>', fake()->paragraphs(2)) . '</p>',
+            'body' =>
+                '<p>' . implode('</p><p>', fake()->paragraphs(10)) . '</p>',
         ];
     }
 }
