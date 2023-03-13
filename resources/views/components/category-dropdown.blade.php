@@ -17,8 +17,9 @@
     @foreach ($categories as $category)
         @php
             $isActive = request()->is("?category={$category->slug}");
+            $r_Queries = http_build_query(request()->except('category'));
         @endphp
-        <x-dropdown-link href="/?category={{ $category->slug }}" :isActive='$isActive'>
+        <x-dropdown-link href="?category={{ $category->slug }}&{{ $r_Queries }}" :isActive='$isActive'>
             {{ ucwords($category->name) }}
         </x-dropdown-link>
     @endforeach
