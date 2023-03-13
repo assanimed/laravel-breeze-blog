@@ -14,11 +14,6 @@ class PostController extends Controller
             'posts' => Post::latest('published_at')
                 ->filter(request(['search', 'category']))
                 ->get(),
-            'categories' => Category::all(),
-            'currentCategory' => Category::firstWhere(
-                'slug',
-                request('category')
-            ),
         ]);
     }
 
