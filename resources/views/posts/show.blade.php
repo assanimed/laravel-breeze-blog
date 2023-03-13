@@ -12,11 +12,11 @@
                     <img src="/images/avatar.png" alt="Lary avatar" class="w-12">
                     <div class="ml-3 text-left">
                         <h5 class="font-bold">
-                            <a href="/author/{{ $post->author->username }}">
+                            <a href="/?author={{ $post->author->username }}">
                                 {{ $post->author->name }}
                             </a>
                         </h5>
-                        <h6>Mascot at Laracasts</h6>
+                        <h6>Staff Developer Advocate</h6>
                     </div>
                 </div>
             </div>

@@ -16,6 +16,7 @@ class Post extends Model
     {
         $search = $filters['search'] ?? false;
         $category = $filters['category'] ?? false;
+        $author = $filters['author'] ?? false;
 
         $query->when(
             $search,
@@ -29,6 +30,14 @@ class Post extends Model
             fn($query, $category) => $query->whereHas(
                 'category',
                 fn($query) => $query->where('slug', $category)
+            )
+        );
+
+        $query->when(
+            $author,
+            fn($query, $author) => $query->whereHas(
+                'author',
+                fn($query) => $query->where('username', $author)
             )
         );
     }
