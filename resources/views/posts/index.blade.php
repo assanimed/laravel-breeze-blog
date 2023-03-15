@@ -8,6 +8,7 @@
 
         @if ($posts->count())
             <x-posts-grid :posts="$posts" />
+            {{ $posts->onEachSide(1)->links() }}
         @else
             <p class=" text-center text-2xl text-bold text-indigo-500"> 😶 No Posts, Please Check Later.</p>
         @endif

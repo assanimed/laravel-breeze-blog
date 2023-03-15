@@ -10,6 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
 <body style="font-family: Open Sans, sans-serif">
+
+
+    @if (Session::has('success'))
+        <x-flash-alert>
+            {{ Session::get('success') }}
+        </x-flash-alert>
+    @endif
+
     <section class="px-6 py-8">
         <nav class="md:flex md:justify-between md:items-center">
             <div>
@@ -19,8 +27,22 @@
             </div>
 
 
-            <div class="mt-8 md:mt-0">
-                <a href="/" class="text-xs font-bold uppercase">Home Page</a>
+            <div class="mt-8 md:mt-0 flex items-center">
+                @auth
+                    <span class="px-5">Welcome, <span class="font-bold">{{ Auth::user()->username }}</span></span>
+                    {{-- <a href="/logout" class="text-sm font-bold uppercase">Logout</a> --}}
+                    <form action="/logout" method="POST">
+                        @csrf
+                        <button type="submit" class="font-bold text-indigo-500">Log Out</button>
+                    </form>
+
+                @else
+                    <div>
+                        <a href="/register" class="text-xs font-bold uppercase">Register</a>  
+                        <span>⚫</span> 
+                        <a href="/login" class="text-xs font-bold uppercase">Login</a>   
+                    </div> 
+                @endauth
 
                 <a href="#"
                     class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
@@ -34,7 +56,7 @@
 
 
         <footer class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
-            <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
+            <img src="/images/newsletter-icon.png" alt="" class="mx-auto mb-6" style="width: 145px;">
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="text-sm mt-3">Promise to keep the inbox clean. No bugs.</p>
 

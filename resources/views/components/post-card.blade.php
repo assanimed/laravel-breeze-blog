@@ -39,7 +39,7 @@
                                 {{ $post->author->name }}
                             </a>
                         </h5>
-                        <h6>Staff Developer Advocates</h6>
+                        <h6>Staff Developer Advocate</h6>
                     </div>
                 </div>
 
